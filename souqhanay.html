@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Souqhanay — Dubai → chez toi</title>
+<meta name="description" content="Commandez n'importe quel article Shein depuis Dubai. Livraison au Tchad et au Cameroun via Orange Money et MTN Mobile Money.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#C9A84C;--gold-l:#F5E6C0;--gold-d:#9A7A2E;--gold-pale:#FAF5E9;
+  --dark:#141210;--dark2:#1E1A14;--warm:#F8F3EC;--warm2:#F0E8D8;
+  --text:#2A2018;--muted:#8A7A60;--light:#B8A888;
+  --green:#2D7A4F;--red:#C0392B;
+  --fd:'Cormorant Garamond',serif;--fb:'DM Sans',sans-serif;
+  --r:12px;--r2:20px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--fb);background:var(--warm);color:var(--text);overflow-x:hidden;font-size:15px;line-height:1.6;}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar{width:4px;}
+::-webkit-scrollbar-track{background:var(--dark);}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:2px;}
+
+/* ── NAV ── */
+nav{
+  background:var(--dark);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 40px;height:64px;
+  position:sticky;top:0;z-index:200;
+  border-bottom:1px solid rgba(201,168,76,0.12);
+}
+.nav-logo{
+  font-family:var(--fd);color:var(--gold);
+  font-size:24px;font-weight:700;letter-spacing:3px;
+  display:flex;flex-direction:column;line-height:1;
+}
+.nav-logo span{
+  font-size:9px;color:rgba(255,255,255,0.3);
+  letter-spacing:4px;font-family:var(--fb);font-weight:300;
+  margin-top:3px;font-style:normal;
+}
+.nav-links{display:flex;gap:2px;align-items:center;}
+.nav-btn{
+  background:none;border:none;
+  color:rgba(255,255,255,0.5);font-size:12px;
+  font-family:var(--fb);padding:8px 16px;border-radius:8px;
+  cursor:pointer;transition:all .2s;font-weight:400;letter-spacing:0.5px;
+}
+.nav-btn:hover,.nav-btn.active{background:rgba(201,168,76,0.1);color:var(--gold);}
+.nav-cta{
+  background:var(--gold);color:var(--dark);border:none;
+  padding:9px 22px;border-radius:8px;font-size:12px;font-weight:500;
+  cursor:pointer;font-family:var(--fb);letter-spacing:0.5px;
+  transition:all .2s;margin-left:8px;
+}
+.nav-cta:hover{background:#dfc05a;transform:translateY(-1px);}
+
+/* ── PAGES ── */
+.page{display:none;animation:fadeIn .3s ease;}
+.page.active{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+
+/* ══════════════════════════════════════
+   HOME
+══════════════════════════════════════ */
+.hero{
+  background:var(--dark);
+  min-height:92vh;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  text-align:center;padding:80px 32px;
+  position:relative;overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 100%,rgba(201,168,76,0.1) 0%,transparent 60%),
+    radial-gradient(ellipse 40% 30% at 20% 20%,rgba(201,168,76,0.04) 0%,transparent 50%);
+}
+.hero-lines{
+  position:absolute;inset:0;
+  background-image:repeating-linear-gradient(
+    0deg,transparent,transparent 60px,
+    rgba(201,168,76,0.03) 60px,rgba(201,168,76,0.03) 61px
+  );
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(201,168,76,0.08);
+  border:1px solid rgba(201,168,76,0.2);
+  color:var(--gold);font-size:11px;letter-spacing:2.5px;
+  font-weight:500;padding:7px 18px;border-radius:30px;
+  margin-bottom:32px;text-transform:uppercase;
+  position:relative;z-index:1;
+}
+.badge-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:blink 2s infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0.3;};}
+.hero h1{
+  font-family:var(--fd);color:#fff;
+  font-size:clamp(38px,6vw,72px);
+  line-height:1.08;font-weight:700;
+  margin-bottom:12px;position:relative;z-index:1;
+}
+.hero h1 em{color:var(--gold);font-style:italic;}
+.hero-slogan{
+  font-family:var(--fd);font-style:italic;
+  color:rgba(255,255,255,0.35);font-size:clamp(18px,2.5vw,26px);
+  margin-bottom:32px;position:relative;z-index:1;letter-spacing:1px;
+}
+.hero p{
+  color:rgba(255,255,255,0.5);font-size:16px;
+  max-width:520px;margin:0 auto 44px;line-height:1.8;
+  font-weight:300;position:relative;z-index:1;
+}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1;}
+.btn-p{
+  background:var(--gold);color:var(--dark);border:none;
+  padding:15px 36px;border-radius:8px;font-size:14px;font-weight:500;
+  cursor:pointer;font-family:var(--fb);transition:all .25s;
+  letter-spacing:0.3px;
+}
+.btn-p:hover{background:#dfc05a;transform:translateY(-2px);}
+.btn-s{
+  background:transparent;color:rgba(255,255,255,0.75);
+  border:1px solid rgba(255,255,255,0.18);
+  padding:15px 36px;border-radius:8px;font-size:14px;
+  cursor:pointer;font-family:var(--fb);transition:all .25s;
+}
+.btn-s:hover{border-color:var(--gold);color:var(--gold);}
+
+/* TRUST BAND */
+.trust-band{
+  background:var(--dark2);
+  padding:28px 40px;
+  display:flex;justify-content:center;gap:64px;flex-wrap:wrap;
+  border-top:1px solid rgba(255,255,255,0.04);
+  border-bottom:1px solid rgba(255,255,255,0.04);
+}
+.trust-item{text-align:center;}
+.trust-val{
+  font-family:var(--fd);font-size:32px;
+  color:var(--gold);font-weight:700;line-height:1;
+}
+.trust-lbl{
+  font-size:10px;color:rgba(255,255,255,0.35);
+  margin-top:4px;letter-spacing:2px;text-transform:uppercase;
+}
+
+/* HOW IT WORKS */
+.section{padding:80px 40px;max-width:960px;margin:0 auto;}
+.sec-eyebrow{
+  font-size:10px;letter-spacing:3px;color:var(--gold);
+  font-weight:500;text-transform:uppercase;margin-bottom:12px;
+}
+.sec-title{
+  font-family:var(--fd);font-size:clamp(28px,4vw,40px);
+  margin-bottom:48px;color:var(--dark);font-weight:700;line-height:1.2;
+}
+.steps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:20px;}
+.step-card{
+  background:#fff;border-radius:var(--r2);padding:32px 24px;
+  border:1px solid rgba(201,168,76,0.12);
+  transition:border-color .25s,transform .25s;
+  position:relative;overflow:hidden;
+}
+.step-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--gold),transparent);
+  opacity:0;transition:opacity .25s;
+}
+.step-card:hover{border-color:rgba(201,168,76,0.35);transform:translateY(-3px);}
+.step-card:hover::before{opacity:1;}
+.step-num{
+  font-family:var(--fd);font-size:48px;color:var(--gold-l);
+  font-weight:700;line-height:1;margin-bottom:16px;
+}
+.step-card h3{font-size:15px;font-weight:500;margin-bottom:10px;color:var(--dark);}
+.step-card p{font-size:13px;color:var(--muted);line-height:1.7;}
+
+/* WHY US */
+.why-section{background:var(--dark);padding:80px 40px;}
+.why-inner{max-width:960px;margin:0 auto;}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:rgba(255,255,255,0.06);border-radius:var(--r2);overflow:hidden;margin-top:48px;}
+.why-card{background:var(--dark2);padding:32px 28px;transition:background .2s;}
+.why-card:hover{background:#1a160f;}
+.why-icon{font-size:28px;margin-bottom:16px;}
+.why-card h3{font-size:14px;font-weight:500;color:#fff;margin-bottom:8px;}
+.why-card p{font-size:12px;color:rgba(255,255,255,0.45);line-height:1.7;}
+.why-section .sec-eyebrow{color:var(--gold);}
+.why-section .sec-title{color:#fff;}
+
+/* PRICING STRIP */
+.pricing-strip{
+  background:var(--warm2);padding:56px 40px;
+  border-top:1px solid rgba(201,168,76,0.15);
+  border-bottom:1px solid rgba(201,168,76,0.15);
+}
+.pricing-inner{max-width:960px;margin:0 auto;}
+.pricing-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:40px;}
+.p-card{
+  background:#fff;border-radius:var(--r2);padding:32px 24px;
+  text-align:center;border:1px solid rgba(0,0,0,0.07);
+  transition:transform .2s;
+}
+.p-card:hover{transform:translateY(-2px);}
+.p-card.featured{border:2px solid var(--gold);position:relative;}
+.feat-tag{
+  position:absolute;top:-13px;left:50%;transform:translateX(-50%);
+  background:var(--gold);color:var(--dark);
+  font-size:10px;font-weight:500;padding:4px 14px;
+  border-radius:20px;white-space:nowrap;letter-spacing:0.5px;
+}
+.p-tier{font-size:10px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;}
+.p-pct{font-family:var(--fd);font-size:44px;color:var(--dark);font-weight:700;line-height:1;}
+.p-of{font-size:12px;color:var(--muted);margin-top:4px;margin-bottom:20px;}
+.p-features{list-style:none;text-align:left;}
+.p-features li{font-size:12px;color:var(--text);padding:5px 0;border-bottom:1px solid rgba(0,0,0,0.04);}
+.p-features li:last-child{border-bottom:none;}
+.p-features li::before{content:'✓  ';color:var(--green);font-weight:600;}
+
+/* SHIP TABLE */
+.ship-section{padding:64px 40px;max-width:960px;margin:0 auto;}
+.ship-table{width:100%;border-collapse:collapse;background:#fff;border-radius:var(--r2);overflow:hidden;border:1px solid rgba(0,0,0,0.07);}
+.ship-table th{
+  background:var(--warm2);font-size:10px;font-weight:500;
+  color:var(--muted);letter-spacing:2px;padding:14px 20px;
+  text-align:left;border-bottom:1px solid rgba(0,0,0,0.06);text-transform:uppercase;
+}
+.ship-table td{font-size:13px;padding:13px 20px;border-bottom:1px solid rgba(0,0,0,0.04);color:var(--text);}
+.ship-table tr:last-child td{border-bottom:none;}
+.ship-table tr:hover td{background:var(--warm);}
+
+/* FOOTER */
+footer{
+  background:var(--dark);
+  padding:48px 40px 32px;
+  border-top:1px solid rgba(201,168,76,0.1);
+}
+.footer-inner{max-width:960px;margin:0 auto;}
+.footer-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:32px;margin-bottom:40px;}
+.footer-brand{font-family:var(--fd);color:var(--gold);font-size:28px;font-weight:700;letter-spacing:3px;}
+.footer-tagline{font-size:12px;color:rgba(255,255,255,0.3);margin-top:6px;letter-spacing:1px;}
+.footer-links{display:flex;gap:24px;flex-wrap:wrap;}
+.footer-link{color:rgba(255,255,255,0.4);font-size:12px;cursor:pointer;text-decoration:none;transition:color .2s;}
+.footer-link:hover{color:var(--gold);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.05);padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.footer-copy{font-size:11px;color:rgba(255,255,255,0.2);letter-spacing:0.5px;}
+.footer-wa{display:flex;align-items:center;gap:8px;font-size:12px;color:rgba(255,255,255,0.5);}
+.wa-green{color:#25D366;font-weight:500;}
+
+/* ══════════════════════════════════════
+   ORDER FORM
+══════════════════════════════════════ */
+.order-wrap{max-width:700px;margin:0 auto;padding:64px 32px;}
+.page-eyebrow{font-size:10px;letter-spacing:3px;color:var(--gold);font-weight:500;text-transform:uppercase;margin-bottom:10px;}
+.page-title{font-family:var(--fd);font-size:32px;margin-bottom:8px;font-weight:700;color:var(--dark);}
+.page-sub{color:var(--muted);font-size:14px;margin-bottom:36px;line-height:1.6;}
+
+.fcard{background:#fff;border-radius:var(--r2);padding:32px;border:1px solid rgba(0,0,0,0.07);margin-bottom:16px;}
+.fcard-title{font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:22px;}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
+.frow.full{grid-template-columns:1fr;}
+.field label{display:block;font-size:10px;font-weight:500;color:var(--muted);margin-bottom:6px;letter-spacing:1px;text-transform:uppercase;}
+.field input,.field select,.field textarea{
+  width:100%;padding:11px 14px;
+  border:1px solid rgba(0,0,0,0.12);border-radius:10px;
+  font-size:13px;font-family:var(--fb);
+  background:var(--warm);color:var(--text);outline:none;
+  transition:border-color .2s,background .2s;
+}
+.field input:focus,.field select:focus,.field textarea:focus{
+  border-color:var(--gold);background:#fff;
+}
+.field textarea{resize:vertical;min-height:76px;}
+
+/* ESTIMATE */
+.est-box{
+  background:var(--gold-pale);border-radius:var(--r);
+  padding:22px 26px;border:1px solid rgba(201,168,76,0.25);
+  margin-bottom:16px;
+}
+.est-title{font-size:10px;font-weight:500;color:var(--gold-d);margin-bottom:16px;letter-spacing:2px;text-transform:uppercase;}
+.est-row{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--text);padding:4px 0;}
+.est-row.tot{
+  font-weight:500;font-size:16px;color:var(--dark);
+  border-top:1px solid rgba(201,168,76,0.3);
+  padding-top:12px;margin-top:8px;
+}
+.tier-pill{
+  font-size:10px;background:var(--gold);color:var(--dark);
+  padding:2px 10px;border-radius:12px;font-weight:500;
+  margin-left:8px;display:none;
+}
+.est-note{font-size:10px;color:var(--muted);margin-top:10px;font-style:italic;}
+
+/* PAYMENT */
+.pay-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px;}
+.pay-opt{
+  padding:12px;border:1px solid rgba(0,0,0,0.1);border-radius:10px;
+  background:var(--warm);cursor:pointer;font-size:12px;
+  font-family:var(--fb);color:var(--text);text-align:center;
+  transition:all .2s;font-weight:400;
+}
+.pay-opt:hover{border-color:var(--gold);}
+.pay-opt.sel{border:2px solid var(--gold);background:var(--gold-pale);font-weight:500;color:var(--dark);}
+
+.submit-btn{
+  width:100%;background:var(--dark);color:var(--gold);border:none;
+  padding:17px;border-radius:12px;font-size:14px;font-weight:500;
+  cursor:pointer;font-family:var(--fb);letter-spacing:0.8px;
+  transition:all .25s;margin-top:6px;
+}
+.submit-btn:hover{background:var(--gold);color:var(--dark);}
+
+/* SUCCESS */
+.success{display:none;text-align:center;padding:80px 32px;}
+.success.show{display:block;}
+.s-icon{font-size:52px;margin-bottom:24px;}
+.success h2{font-family:var(--fd);font-size:32px;margin-bottom:10px;font-weight:700;}
+.success p{color:var(--muted);font-size:14px;margin-bottom:20px;line-height:1.7;max-width:400px;margin-left:auto;margin-right:auto;}
+.order-ref{font-family:var(--fd);font-size:26px;font-weight:700;color:var(--gold);letter-spacing:4px;}
+.wa-confirm{
+  display:inline-flex;align-items:center;gap:10px;
+  background:#25D366;color:#fff;text-decoration:none;
+  padding:14px 28px;border-radius:10px;font-size:13px;
+  font-weight:500;font-family:var(--fb);margin-top:20px;
+  transition:background .2s;
+}
+.wa-confirm:hover{background:#1fb959;}
+.wa-confirm svg{width:18px;height:18px;fill:currentColor;}
+
+/* ══════════════════════════════════════
+   TRACKER
+══════════════════════════════════════ */
+.track-wrap{max-width:700px;margin:0 auto;padding:64px 32px;}
+.search-bar{display:flex;gap:10px;margin:24px 0 36px;}
+.search-bar input{
+  flex:1;padding:13px 16px;
+  border:1px solid rgba(0,0,0,0.12);border-radius:10px;
+  font-size:13px;font-family:var(--fb);background:#fff;
+  outline:none;transition:border-color .2s;
+}
+.search-bar input:focus{border-color:var(--gold);}
+.search-bar button{
+  background:var(--dark);color:var(--gold);border:none;
+  padding:13px 24px;border-radius:10px;font-size:13px;
+  font-weight:500;cursor:pointer;font-family:var(--fb);
+  white-space:nowrap;transition:all .2s;
+}
+.search-bar button:hover{background:var(--gold);color:var(--dark);}
+
+.ocard{
+  background:#fff;border-radius:var(--r2);padding:26px;
+  margin-bottom:14px;border:1px solid rgba(0,0,0,0.07);
+  cursor:pointer;transition:all .2s;
+}
+.ocard:hover{border-color:rgba(201,168,76,0.4);}
+.ocard-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:18px;}
+.o-ref{font-size:10px;font-weight:500;color:var(--muted);letter-spacing:2px;text-transform:uppercase;}
+.o-name{font-size:15px;font-weight:500;color:var(--dark);margin-top:4px;}
+.o-price{font-size:12px;color:var(--muted);margin-top:2px;}
+.sbadge{font-size:10px;font-weight:500;padding:5px 12px;border-radius:20px;letter-spacing:0.5px;white-space:nowrap;}
+.s-pending{background:#FEF3C7;color:#92400E;}
+.s-purchased{background:#DBEAFE;color:#1E40AF;}
+.s-shipped{background:#D1FAE5;color:#065F46;}
+.s-delivered{background:#F1F5F9;color:#374151;}
+
+.prog{display:flex;margin-top:6px;}
+.pstep{flex:1;display:flex;flex-direction:column;align-items:center;}
+.pdot{
+  width:22px;height:22px;border-radius:50%;border:2px solid #ddd;
+  background:#fff;display:flex;align-items:center;justify-content:center;
+  font-size:10px;font-weight:500;position:relative;z-index:1;
+}
+.pdot.done{background:var(--green);border-color:var(--green);color:#fff;}
+.pdot.active{background:var(--gold);border-color:var(--gold);color:var(--dark);}
+.pline{flex:1;height:2px;background:#eee;margin-top:10px;}
+.pline.done{background:var(--green);}
+.plbl{font-size:9px;color:var(--muted);margin-top:6px;text-align:center;letter-spacing:0.5px;}
+
+.odetail{display:none;border-top:1px solid rgba(0,0,0,0.06);margin-top:18px;padding-top:18px;}
+.odetail.open{display:block;}
+.drow{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);padding:4px 0;}
+.drow span:last-child{color:var(--text);font-weight:500;}
+
+/* ══════════════════════════════════════
+   ADMIN
+══════════════════════════════════════ */
+.admin-wrap{max-width:980px;margin:0 auto;padding:56px 32px;}
+.admin-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:32px;}
+.astat{background:#fff;border-radius:var(--r);padding:22px;border:1px solid rgba(0,0,0,0.07);}
+.astat .v{font-family:var(--fd);font-size:30px;font-weight:700;color:var(--dark);}
+.astat .l{font-size:11px;color:var(--muted);margin-top:3px;}
+.atable{background:#fff;border-radius:var(--r2);border:1px solid rgba(0,0,0,0.07);overflow:hidden;}
+.thead{
+  display:grid;grid-template-columns:85px 1fr 95px 85px 120px 105px;
+  padding:12px 22px;background:var(--warm2);
+  font-size:10px;font-weight:500;color:var(--muted);
+  letter-spacing:1.5px;text-transform:uppercase;
+  border-bottom:1px solid rgba(0,0,0,0.06);
+}
+.trow{
+  display:grid;grid-template-columns:85px 1fr 95px 85px 120px 105px;
+  padding:14px 22px;border-bottom:1px solid rgba(0,0,0,0.04);
+  font-size:12px;align-items:center;transition:background .15s;
+}
+.trow:hover{background:var(--warm);}
+.trow:last-child{border-bottom:none;}
+.tid{font-weight:500;color:var(--gold);font-size:11px;letter-spacing:0.5px;}
+.tname{font-weight:500;font-size:13px;}
+.tprod{font-size:11px;color:var(--muted);margin-top:2px;}
+.asel{
+  border:1px solid rgba(0,0,0,0.1);border-radius:6px;
+  padding:5px 8px;font-size:11px;font-family:var(--fb);
+  background:var(--warm);color:var(--text);cursor:pointer;width:100%;
+}
+.notif-btn{
+  background:var(--dark);color:var(--gold);border:none;
+  padding:6px 10px;border-radius:6px;font-size:10px;font-weight:500;
+  cursor:pointer;font-family:var(--fb);width:100%;margin-top:5px;
+  transition:all .2s;letter-spacing:0.3px;
+}
+.notif-btn:hover{background:var(--gold);color:var(--dark);}
+
+/* ══════════════════════════════════════
+   MOBILE
+══════════════════════════════════════ */
+@media(max-width:680px){
+  nav{padding:0 20px;}
+  .nav-links{display:none;}
+  .hero{padding:60px 20px;}
+  .trust-band{gap:32px;padding:24px 20px;}
+  .section,.ship-section{padding:56px 20px;}
+  .why-section{padding:56px 20px;}
+  .pricing-strip{padding:56px 20px;}
+  .frow{grid-template-columns:1fr;}
+  .pay-grid{grid-template-columns:1fr;}
+  .admin-stats{grid-template-columns:1fr 1fr;}
+  .thead,.trow{grid-template-columns:70px 1fr 80px;}
+  .thead>*:nth-child(n+4),.trow>*:nth-child(n+4){display:none;}
+  .order-wrap,.track-wrap,.admin-wrap{padding:40px 20px;}
+  footer{padding:40px 20px 24px;}
+  .footer-top{flex-direction:column;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">
+    SOUQHANAY
+    <span>Dubai → chez toi</span>
+  </div>
+  <div class="nav-links">
+    <button class="nav-btn active" onclick="show('home')">Accueil</button>
+    <button class="nav-btn" onclick="show('order')">Commander</button>
+    <button class="nav-btn" onclick="show('track')">Suivi</button>
+    <button class="nav-btn" style="opacity:0.35;font-size:11px" onclick="show('admin')">Admin</button>
+  </div>
+  <button class="nav-cta" onclick="show('order')">Commander →</button>
+</nav>
+
+<!-- ══════════ HOME ══════════ -->
+<div id="page-home" class="page active">
+
+  <div class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-lines"></div>
+    <div class="hero-badge"><span class="badge-dot"></span>Service actif — Dubai 🇦🇪</div>
+    <h1>Shein livré<br><em>chez toi</em></h1>
+    <div class="hero-slogan">Dubai → chez toi</div>
+    <p>Souqhanay commande pour toi sur Shein depuis Dubai et livre directement à ta porte au Tchad et au Cameroun. Paiement simple via Mobile Money.</p>
+    <div class="hero-btns">
+      <button class="btn-p" onclick="show('order')">Passer une commande →</button>
+      <button class="btn-s" onclick="show('track')">Suivre ma commande</button>
+    </div>
+  </div>
+
+  <div class="trust-band">
+    <div class="trust-item"><div class="trust-val">25%</div><div class="trust-lbl">Frais max.</div></div>
+    <div class="trust-item"><div class="trust-val">7–14j</div><div class="trust-lbl">Livraison</div></div>
+    <div class="trust-item"><div class="trust-val">2</div><div class="trust-lbl">Pays</div></div>
+    <div class="trust-item"><div class="trust-val">100%</div><div class="trust-lbl">Fiable</div></div>
+  </div>
+
+  <div class="section">
+    <div class="sec-eyebrow">Comment ça marche</div>
+    <div class="sec-title">Simple comme un message WhatsApp</div>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">01</div>
+        <h3>Envoie le lien</h3>
+        <p>Copie le lien du produit Shein que tu veux et soumets ta commande sur Souqhanay.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">02</div>
+        <h3>Reçois ton devis</h3>
+        <p>On calcule le prix total — produit + frais de service + livraison jusqu'à toi.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">03</div>
+        <h3>Paie en Mobile Money</h3>
+        <p>Orange Money, MTN ou Airtel. On confirme ta commande dès réception du paiement.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">04</div>
+        <h3>On s'occupe du reste</h3>
+        <p>On commande à Dubai, on réceptionne et on expédie directement chez toi.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="why-section">
+    <div class="why-inner">
+      <div class="sec-eyebrow">Pourquoi Souqhanay</div>
+      <div class="sec-title">Mon souq. Ta confiance.</div>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon">🇦🇪</div>
+          <h3>Basé à Dubai</h3>
+          <p>On est physiquement à Dubai. Chaque commande Shein est réelle et vérifiable.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">💳</div>
+          <h3>Paiement Mobile Money</h3>
+          <p>Orange Money, MTN, Airtel. Pas besoin de carte bancaire ou de compte international.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">📲</div>
+          <h3>Suivi WhatsApp</h3>
+          <p>On te tient informé à chaque étape — commande, expédition et livraison.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🔒</div>
+          <h3>Paiement avant livraison</h3>
+          <p>Tu paies, on commande. Simple, transparent, aucune mauvaise surprise.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pricing-strip">
+    <div class="pricing-inner">
+      <div class="sec-eyebrow">Tarifs</div>
+      <div class="sec-title">Transparent. Sans surprise.</div>
+      <div class="pricing-cards">
+        <div class="p-card">
+          <div class="p-tier">Petite commande</div>
+          <div class="p-pct">25%</div>
+          <div class="p-of">du prix Shein</div>
+          <ul class="p-features">
+            <li>Jusqu'à 50 AED</li>
+            <li>+ 10 AED frais de dossier</li>
+            <li>Livraison standard</li>
+            <li>Suivi WhatsApp</li>
+          </ul>
+        </div>
+        <div class="p-card featured">
+          <div class="feat-tag">Le plus populaire</div>
+          <div class="p-tier">Commande moyenne</div>
+          <div class="p-pct">20%</div>
+          <div class="p-of">du prix Shein</div>
+          <ul class="p-features">
+            <li>50 à 200 AED</li>
+            <li>+ 10 AED frais de dossier</li>
+            <li>Livraison prioritaire</li>
+            <li>Suivi WhatsApp dédié</li>
+          </ul>
+        </div>
+        <div class="p-card">
+          <div class="p-tier">Grande commande</div>
+          <div class="p-pct">15%</div>
+          <div class="p-of">du prix Shein</div>
+          <ul class="p-features">
+            <li>200 AED et plus</li>
+            <li>+ 10 AED frais de dossier</li>
+            <li>Livraison express</li>
+            <li>Gestion douanière incluse</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ship-section">
+    <div class="sec-eyebrow">Livraison</div>
+    <div class="sec-title">Délais & frais</div>
+    <table class="ship-table">
+      <thead>
+        <tr>
+          <th>Destination</th>
+          <th>Délai estimé</th>
+          <th>Frais de base</th>
+          <th>Par kg suppl.</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>🇹🇩 N'Djamena, Tchad</td><td>10–14 jours</td><td>45 AED</td><td>+12 AED/kg</td></tr>
+        <tr><td>🇹🇩 Autres villes, Tchad</td><td>12–18 jours</td><td>55 AED</td><td>+15 AED/kg</td></tr>
+        <tr><td>🇨🇲 Douala / Yaoundé</td><td>8–12 jours</td><td>40 AED</td><td>+10 AED/kg</td></tr>
+        <tr><td>🇨🇲 Autres villes, Cameroun</td><td>10–14 jours</td><td>50 AED</td><td>+12 AED/kg</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <div class="footer-brand">SOUQHANAY</div>
+          <div class="footer-tagline">Dubai → chez toi 🇦🇪</div>
+        </div>
+        <div class="footer-links">
+          <span class="footer-link" onclick="show('home')">Accueil</span>
+          <span class="footer-link" onclick="show('order')">Commander</span>
+          <span class="footer-link" onclick="show('track')">Suivi</span>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy">© 2025 Souqhanay. Tous droits réservés.</div>
+        <div class="footer-wa">
+          <span class="wa-green">WhatsApp</span>
+          <span>+971 502 144 826</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- ══════════ ORDER ══════════ -->
+<div id="page-order" class="page">
+  <div id="order-form-wrap" class="order-wrap">
+    <div class="page-eyebrow">Nouvelle commande</div>
+    <h2 class="page-title">Passe ta commande</h2>
+    <p class="page-sub">Colle le lien Shein de ton article, entre le prix affiché et Souqhanay calcule tout automatiquement.</p>
+
+    <div class="fcard">
+      <div class="fcard-title">Produit Shein</div>
+      <div class="frow full">
+        <div class="field">
+          <label>Lien du produit Shein *</label>
+          <input type="url" id="f-link" placeholder="https://fr.shein.com/...">
+        </div>
+      </div>
+      <div class="frow">
+        <div class="field">
+          <label>Prix Shein (AED) *</label>
+          <input type="number" id="f-price" placeholder="0.00" min="0" step="0.5" oninput="calc()">
+        </div>
+        <div class="field">
+          <label>Quantité</label>
+          <input type="number" id="f-qty" value="1" min="1" max="50" oninput="calc()">
+        </div>
+      </div>
+      <div class="frow">
+        <div class="field">
+          <label>Taille</label>
+          <select id="f-size">
+            <option>XS</option><option>S</option><option selected>M</option>
+            <option>L</option><option>XL</option><option>XXL</option><option>Autre</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Couleur / Variante</label>
+          <input type="text" id="f-color" placeholder="ex: Noir, Rose poudré...">
+        </div>
+      </div>
+      <div class="frow full">
+        <div class="field">
+          <label>Notes spéciales</label>
+          <input type="text" id="f-notes" placeholder="Instructions particulières, modèle exact...">
+        </div>
+      </div>
+    </div>
+
+    <div class="fcard">
+      <div class="fcard-title">Livraison</div>
+      <div class="frow">
+        <div class="field">
+          <label>Nom complet *</label>
+          <input type="text" id="f-name" placeholder="Ton nom complet">
+        </div>
+        <div class="field">
+          <label>WhatsApp *</label>
+          <input type="tel" id="f-phone" placeholder="+235 ...">
+        </div>
+      </div>
+      <div class="frow">
+        <div class="field">
+          <label>Destination</label>
+          <select id="f-dest" onchange="calc()">
+            <option value="TD_NDJ">🇹🇩 Tchad — N'Djamena (45 AED)</option>
+            <option value="TD_OTHER">🇹🇩 Tchad — Autre ville (55 AED)</option>
+            <option value="CM_MAIN">🇨🇲 Cameroun — Douala/Yaoundé (40 AED)</option>
+            <option value="CM_OTHER">🇨🇲 Cameroun — Autre ville (50 AED)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Ville / Quartier</label>
+          <input type="text" id="f-city" placeholder="Ville, quartier, repère...">
+        </div>
+      </div>
+      <div class="frow full">
+        <div class="field">
+          <label>Adresse complète</label>
+          <input type="text" id="f-addr" placeholder="Rue, bâtiment, repère connu...">
+        </div>
+      </div>
+    </div>
+
+    <div class="est-box">
+      <div class="est-title">Estimation de commande</div>
+      <div class="est-row">
+        <span>Prix produit <span id="e-qty"></span></span>
+        <span id="e-prod">— AED</span>
+      </div>
+      <div class="est-row">
+        <span>Frais Souqhanay <span id="e-badge" class="tier-pill"></span></span>
+        <span id="e-fee">— AED</span>
+      </div>
+      <div class="est-row">
+        <span>Frais de dossier</span>
+        <span>10 AED</span>
+      </div>
+      <div class="est-row">
+        <span>Livraison</span>
+        <span id="e-ship">— AED</span>
+      </div>
+      <div class="est-row tot">
+        <span>Total estimé</span>
+        <span id="e-total">— AED</span>
+      </div>
+      <div class="est-note">* Estimation indicative. Le total final est confirmé par WhatsApp avant paiement.</div>
+    </div>
+
+    <div class="fcard">
+      <div class="fcard-title">Mode de paiement</div>
+      <p style="font-size:12px;color:var(--muted);margin-bottom:14px;line-height:1.6">Tu seras contacté sur WhatsApp pour finaliser. Aucun paiement requis maintenant.</p>
+      <div class="pay-grid">
+        <button class="pay-opt sel" onclick="selPay(this)">🟠 Orange Money</button>
+        <button class="pay-opt" onclick="selPay(this)">🟡 MTN Mobile Money</button>
+        <button class="pay-opt" onclick="selPay(this)">🔵 Airtel Money</button>
+        <button class="pay-opt" onclick="selPay(this)">💵 Cash à la livraison</button>
+      </div>
+    </div>
+
+    <button class="submit-btn" onclick="submitOrder()">Confirmer &amp; envoyer sur WhatsApp →</button>
+  </div>
+
+  <div class="success" id="order-success">
+    <div class="s-icon">✅</div>
+    <h2 class="page-title">Commande reçue !</h2>
+    <p>Ta commande a été transmise à Souqhanay. On te contacte sur WhatsApp dans les <strong>2 heures</strong> pour confirmer le prix et finaliser le paiement.</p>
+    <div class="order-ref" id="s-ref">SQ-0001</div>
+    <p style="font-size:12px;color:var(--muted);margin-top:8px">Ta référence — garde-la pour le suivi</p>
+    <br>
+    <a id="wa-link" class="wa-confirm" target="_blank">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Ouvrir WhatsApp
+    </a>
+    <br><br>
+    <button class="btn-p" onclick="show('track')">Suivre ma commande</button>
+  </div>
+</div>
+
+<!-- ══════════ TRACK ══════════ -->
+<div id="page-track" class="page">
+  <div class="track-wrap">
+    <div class="page-eyebrow">Suivi</div>
+    <h2 class="page-title">Où est ma commande ?</h2>
+    <p class="page-sub">Entre ta référence Souqhanay ou ton numéro WhatsApp.</p>
+    <div class="search-bar">
+      <input type="text" id="track-q" placeholder="Référence (SQ-0044) ou téléphone (+235...)">
+      <button onclick="doSearch()">Rechercher</button>
+    </div>
+    <div id="track-results"></div>
+    <div id="track-samples">
+      <p style="font-size:10px;color:var(--muted);letter-spacing:2px;margin-bottom:16px;text-transform:uppercase">Exemples de commandes</p>
+      <div class="ocard" onclick="toggleDetail(this)">
+        <div class="ocard-top">
+          <div><div class="o-ref">SQ-0044</div><div class="o-name">Robe florale — Taille M, Noir</div><div class="o-price">142 AED total</div></div>
+          <span class="sbadge s-shipped">En transit ✈</span>
+        </div>
+        <div class="prog">
+          <div class="pstep"><div class="pdot done">✓</div><div class="plbl">Reçu</div></div>
+          <div class="pline done"></div>
+          <div class="pstep"><div class="pdot done">✓</div><div class="plbl">Commandé</div></div>
+          <div class="pline done"></div>
+          <div class="pstep"><div class="pdot active">✈</div><div class="plbl">Expédié</div></div>
+          <div class="pline"></div>
+          <div class="pstep"><div class="pdot">○</div><div class="plbl">Livré</div></div>
+        </div>
+        <div class="odetail">
+          <div class="drow"><span>Client</span><span>Fatima A.</span></div>
+          <div class="drow"><span>Destination</span><span>N'Djamena, Tchad</span></div>
+          <div class="drow"><span>Arrivée estimée</span><span>3–5 jours</span></div>
+          <div class="drow"><span>Paiement</span><span>Orange Money ✓</span></div>
+        </div>
+      </div>
+      <div class="ocard" onclick="toggleDetail(this)">
+        <div class="ocard-top">
+          <div><div class="o-ref">SQ-0041</div><div class="o-name">Sneakers blanches — Taille 41</div><div class="o-price">98 AED total</div></div>
+          <span class="sbadge s-pending">En attente paiement</span>
+        </div>
+        <div class="prog">
+          <div class="pstep"><div class="pdot active">→</div><div class="plbl">Reçu</div></div>
+          <div class="pline"></div>
+          <div class="pstep"><div class="pdot">○</div><div class="plbl">Commandé</div></div>
+          <div class="pline"></div>
+          <div class="pstep"><div class="pdot">○</div><div class="plbl">Expédié</div></div>
+          <div class="pline"></div>
+          <div class="pstep"><div class="pdot">○</div><div class="plbl">Livré</div></div>
+        </div>
+        <div class="odetail">
+          <div class="drow"><span>Client</span><span>Moussa K.</span></div>
+          <div class="drow"><span>Destination</span><span>Douala, Cameroun</span></div>
+          <div class="drow"><span>Statut</span><span style="color:#D85A30">Paiement WhatsApp en attente</span></div>
+        </div>
+      </div>
+      <div class="ocard" onclick="toggleDetail(this)">
+        <div class="ocard-top">
+          <div><div class="o-ref">SQ-0038</div><div class="o-name">Lot vêtements enfants ×3</div><div class="o-price">220 AED total</div></div>
+          <span class="sbadge s-delivered">Livré ✓</span>
+        </div>
+        <div class="prog">
+          <div class="pstep"><div class="pdot done">✓</div><div class="plbl">Reçu</div></div>
+          <div class="pline done"></div>
+          <div class="pstep"><div class="pdot done">✓</div><div class="plbl">Commandé</div></div>
+          <div class="pline done"></div>
+          <div class="pstep"><div class="pdot done">✓</div><div class="plbl">Expédié</div></div>
+          <div class="pline done"></div>
+          <div class="pstep"><div class="pdot done">✓</div><div class="plbl">Livré</div></div>
+        </div>
+        <div class="odetail">
+          <div class="drow"><span>Client</span><span>Amina B.</span></div>
+          <div class="drow"><span>Livré le</span><span>14 mars 2025</span></div>
+          <div class="drow"><span>Destination</span><span>Yaoundé, Cameroun</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ ADMIN ══════════ -->
+<div id="page-admin" class="page">
+  <div class="admin-wrap">
+    <div class="page-eyebrow">Administration</div>
+    <h2 class="page-title">Tableau de bord</h2>
+    <p class="page-sub">Gérez toutes vos commandes Souqhanay en temps réel.</p>
+    <div class="admin-stats">
+      <div class="astat"><div class="v" id="a-total">3</div><div class="l">Commandes totales</div></div>
+      <div class="astat"><div class="v" id="a-pending">1</div><div class="l">En attente</div></div>
+      <div class="astat"><div class="v" id="a-rev" style="color:var(--green)">460</div><div class="l">Revenus (AED)</div></div>
+      <div class="astat"><div class="v">100%</div><div class="l">Satisfaction</div></div>
+    </div>
+    <div class="atable">
+      <div class="thead">
+        <div>Réf.</div><div>Client / Produit</div><div>Montant</div>
+        <div>Pays</div><div>Statut</div><div>Actions</div>
+      </div>
+      <div id="admin-body"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const WA = '971502144826';
+const SHIP = {TD_NDJ:45,TD_OTHER:55,CM_MAIN:40,CM_OTHER:50};
+const DEST_L = {TD_NDJ:'🇹🇩 Tchad',TD_OTHER:'🇹🇩 Tchad',CM_MAIN:'🇨🇲 Cameroun',CM_OTHER:'🇨🇲 Cameroun'};
+const S_MAP = {pending:'s-pending',purchased:'s-purchased',shipped:'s-shipped',delivered:'s-delivered'};
+const S_LBL = {pending:'En attente',purchased:'Commandé ✓',shipped:'En transit ✈',delivered:'Livré ✓'};
+
+let orders = [
+  {id:'SQ-0044',name:'Fatima A.',phone:'+23566000001',product:'Robe florale Shein',size:'M',color:'Noir',qty:1,price:95,dest:'TD_NDJ',city:"N'Djamena",pay:'Orange Money',status:'shipped',total:142},
+  {id:'SQ-0041',name:'Moussa K.',phone:'+23769000002',product:'Sneakers blanches Shein',size:'41',color:'Blanc',qty:1,price:65,dest:'CM_MAIN',city:'Douala',pay:'MTN Mobile Money',status:'pending',total:98},
+  {id:'SQ-0038',name:'Amina B.',phone:'+23768000003',product:'Lot vêtements enfants',size:'Mixte',color:'Mixte',qty:3,price:55,dest:'CM_MAIN',city:'Yaoundé',pay:'MTN Mobile Money',status:'delivered',total:220}
+];
+let counter = 44;
+
+function show(p){
+  document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));
+  document.getElementById('page-'+p).classList.add('active');
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  const idx={home:0,order:1,track:2,admin:3};
+  if(idx[p]!==undefined) document.querySelectorAll('.nav-btn')[idx[p]]?.classList.add('active');
+  if(p==='admin') renderAdmin();
+  window.scrollTo(0,0);
+}
+
+function feeRate(s){return s<=50?{r:0.25,l:'25%'}:s<=200?{r:0.20,l:'20%'}:{r:0.15,l:'15%'};}
+
+function calc(){
+  const price=parseFloat(document.getElementById('f-price').value)||0;
+  const qty=parseInt(document.getElementById('f-qty').value)||1;
+  const dest=document.getElementById('f-dest').value;
+  const sub=price*qty;
+  const {r,l}=feeRate(sub);
+  const fee=sub*r;
+  const handling=10;
+  const ship=SHIP[dest]||45;
+  const total=sub+fee+handling+ship;
+  document.getElementById('e-qty').textContent=qty>1?`×${qty}`:'';
+  document.getElementById('e-prod').textContent=sub>0?sub.toFixed(2)+' AED':'— AED';
+  document.getElementById('e-fee').textContent=fee>0?fee.toFixed(2)+' AED':'— AED';
+  document.getElementById('e-ship').textContent=ship+' AED';
+  document.getElementById('e-total').textContent=sub>0?total.toFixed(2)+' AED':'— AED';
+  const b=document.getElementById('e-badge');
+  if(sub>0){b.textContent=l;b.style.display='inline';}else{b.style.display='none';}
+  return {sub,fee,ship,total,r,l};
+}
+
+function selPay(btn){
+  document.querySelectorAll('.pay-opt').forEach(b=>b.classList.remove('sel'));
+  btn.classList.add('sel');
+}
+
+function submitOrder(){
+  const link=document.getElementById('f-link').value.trim();
+  const price=document.getElementById('f-price').value;
+  const name=document.getElementById('f-name').value.trim();
+  const phone=document.getElementById('f-phone').value.trim();
+  if(!link||!price||!name||!phone){
+    alert('Merci de remplir : lien Shein, prix, nom et téléphone WhatsApp.');return;
+  }
+  const qty=document.getElementById('f-qty').value;
+  const size=document.getElementById('f-size').value;
+  const color=document.getElementById('f-color').value||'Non précisé';
+  const destEl=document.getElementById('f-dest');
+  const destTxt=destEl.options[destEl.selectedIndex].text;
+  const dest=destEl.value;
+  const city=document.getElementById('f-city').value||'Non précisé';
+  const notes=document.getElementById('f-notes').value;
+  const pay=document.querySelector('.pay-opt.sel')?.textContent||'Non précisé';
+  const est=calc();
+  counter++;
+  const ref='SQ-'+String(counter).padStart(4,'0');
+  document.getElementById('s-ref').textContent=ref;
+
+  const msg=`🛍 *NOUVELLE COMMANDE SOUQHANAY*\n\n*Référence:* ${ref}\n*Client:* ${name}\n*WhatsApp:* ${phone}\n\n*Produit:* ${link}\n*Prix Shein:* ${parseFloat(price).toFixed(2)} AED\n*Quantité:* ${qty} | *Taille:* ${size} | *Couleur:* ${color}\n\n*Livraison:* ${destTxt}\n*Ville:* ${city}\n*Paiement:* ${pay}\n\n*Estimation:*\n— Produit: ${est.sub.toFixed(2)} AED\n— Frais (${(est.r*100).toFixed(0)}%): ${est.fee.toFixed(2)} AED\n— Frais de dossier: 10 AED\n— Livraison: ${est.ship} AED\n— *Total: ${est.total.toFixed(2)} AED*\n${notes?'\n*Notes:* '+notes:''}\n\n✅ Dubai → chez toi 🇦🇪`;
+
+  document.getElementById('wa-link').href=`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`;
+  window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`,'_blank');
+  orders.unshift({id:ref,name,phone:phone.replace(/\s/g,''),product:link.length>45?link.substring(0,45)+'...':link,size,color,qty:parseInt(qty),price:parseFloat(price),dest,city,pay,status:'pending',total:est.total});
+  document.getElementById('order-form-wrap').style.display='none';
+  document.getElementById('order-success').classList.add('show');
+  window.scrollTo(0,0);
+}
+
+function toggleDetail(card){card.querySelector('.odetail')?.classList.toggle('open');}
+
+function doSearch(){
+  const q=document.getElementById('track-q').value.trim().toLowerCase();
+  if(!q)return;
+  document.getElementById('track-samples').style.display='none';
+  const found=orders.filter(o=>o.id.toLowerCase().includes(q)||o.phone.replace(/\s/g,'').includes(q.replace(/[\s+]/g,'')));
+  const res=document.getElementById('track-results');
+  if(!found.length){res.innerHTML='<p style="color:var(--muted);font-size:13px;padding:20px 0">Aucune commande trouvée. Vérifie ta référence ou ton numéro.</p>';return;}
+  res.innerHTML=found.map(buildCard).join('');
+}
+
+function buildCard(o){
+  const steps=['pending','purchased','shipped','delivered'];
+  const labels=['Reçu','Commandé','Expédié','Livré'];
+  const idx=steps.indexOf(o.status);
+  const dots=labels.map((l,i)=>{
+    const dc=i<idx?'done':i===idx?'active':'';
+    const sym=i<idx?'✓':i===idx?'→':'○';
+    const lc=i<idx&&i<3?'done':'';
+    return `<div class="pstep"><div class="pdot ${dc}">${sym}</div><div class="plbl">${l}</div></div>${i<3?`<div class="pline ${lc}"></div>`:''}`;
+  }).join('');
+  return `<div class="ocard" onclick="toggleDetail(this)">
+    <div class="ocard-top"><div><div class="o-ref">${o.id}</div><div class="o-name">${o.product}</div><div class="o-price">${o.total.toFixed(2)} AED</div></div><span class="sbadge ${S_MAP[o.status]}">${S_LBL[o.status]}</span></div>
+    <div class="prog">${dots}</div>
+    <div class="odetail"><div class="drow"><span>Client</span><span>${o.name}</span></div><div class="drow"><span>Paiement</span><span>${o.pay}</span></div><div class="drow"><span>Ville</span><span>${o.city}</span></div></div>
+  </div>`;
+}
+
+function renderAdmin(){
+  document.getElementById('admin-body').innerHTML=orders.map((o,i)=>`
+    <div class="trow">
+      <div class="tid">${o.id}</div>
+      <div><div class="tname">${o.name}</div><div class="tprod">${o.product.substring(0,30)}${o.product.length>30?'...':''}</div></div>
+      <div style="font-weight:500">${o.total.toFixed(0)} AED</div>
+      <div>${DEST_L[o.dest]||'—'}</div>
+      <div><select class="asel" onchange="updateStatus(${i},this.value)">${['pending','purchased','shipped','delivered'].map(s=>`<option value="${s}"${o.status===s?' selected':''}>${S_LBL[s]}</option>`).join('')}</select></div>
+      <div><button class="notif-btn" onclick="notifyClient(${i})">WhatsApp ✉</button></div>
+    </div>`).join('');
+  document.getElementById('a-total').textContent=orders.length;
+  document.getElementById('a-pending').textContent=orders.filter(o=>o.status==='pending').length;
+  document.getElementById('a-rev').textContent=orders.reduce((s,o)=>s+o.total,0).toFixed(0);
+}
+
+function updateStatus(i,s){orders[i].status=s;renderAdmin();}
+
+function notifyClient(i){
+  const o=orders[i];
+  const msgs={
+    pending:`Salam ${o.name} 👋\n\nTa commande Souqhanay *${o.id}* est bien reçue.\n\nMerci de finaliser ton paiement via *${o.pay}* pour qu'on puisse commander ton article.\n\n💰 Total: *${o.total.toFixed(2)} AED*\n\nSouqhanay — Dubai → chez toi 🇦🇪`,
+    purchased:`Salam ${o.name} ✅\n\nBonne nouvelle ! Ta commande *${o.id}* a été passée sur Shein.\n\nOn te tient informé dès l'expédition depuis Dubai.\n\nSouqhanay 🛍`,
+    shipped:`Salam ${o.name} ✈️\n\nTa commande *${o.id}* est en route depuis Dubai !\n\nDélai estimé : 7 à 14 jours. On te contacte dès l'arrivée.\n\nSouqhanay — Dubai → chez toi 🇦🇪`,
+    delivered:`Salam ${o.name} 🎉\n\nTa commande *${o.id}* est arrivée !\n\nOn espère que tu es satisfait(e) 🙏 N'hésite pas à nous recommander à tes proches.\n\nSouqhanay — Dubai → chez toi 🇦🇪`
+  };
+  const phone=o.phone.replace(/[\s\-+]/g,'');
+  window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msgs[o.status]||msgs.pending)}`,'_blank');
+}
+
+calc();
+</script>
+</body>
+</html>
